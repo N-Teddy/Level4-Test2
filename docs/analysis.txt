@@ -1,0 +1,37 @@
+	TABLES
+
+-> User table
+	userId
+	firstName
+	lastName
+	email
+	password
+	role
+
+->Teacher table
+	teacherId
+	userId(foriegnKkey)
+
+->Student table
+	studentId
+	UserId(foriegnKkey)
+
+->Course Table
+	courseId
+	title
+	description
+	type
+	teacherId(foriegnKkey)
+
+->Enroll Table
+	enrollId
+	studentId(foriegnKkey)
+	courseId(foriegnKkey)
+
+	RELATIONSHIPS
+
+-> User has a 0 to 1 relationship with teacher since it is optional
+-> User has a 0 to 1 relationship with student since it is optional
+-> Teacher a a 1 to Many relationship with course since a teacher can have many courses 
+-> Student has a 1 to Many relationship with Enroll since a student can have many enrollment
+-> Course has a 1 to Many relationship to Enroll since a course can be Enrolled many times
